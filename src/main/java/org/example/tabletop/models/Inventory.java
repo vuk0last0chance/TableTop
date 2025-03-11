@@ -1,5 +1,7 @@
 package org.example.tabletop.models;
 
+import org.example.tabletop.enums.ItemType;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -128,12 +130,12 @@ public class Inventory {
     public void equipItem(Characters character, Item item) {
         if (item == null) return;
 
-        String itemType = item.getType();
+        ItemType itemType = item.getType();
 
-        if ("Weapon".equalsIgnoreCase(itemType)) {
+        if ("Weapon".equalsIgnoreCase(String.valueOf(itemType))) {
             // Equip as weapon.
             this.equippedWeapon = item;
-        } else if ("Jewelry".equalsIgnoreCase(itemType)) {
+        } else if ("Jewelry".equalsIgnoreCase(String.valueOf(itemType))) {
             // Equip in the first available jewelry slot.
             if (equippedJewelry[0] == null) {
                 equippedJewelry[0] = item;
@@ -143,16 +145,16 @@ public class Inventory {
                 System.out.println("No more jewelry slots available.");
                 return; // Exit if no slots are available.
             }
-        } else if ("Helmet".equalsIgnoreCase(itemType)) {
+        } else if ("Helmet".equalsIgnoreCase(String.valueOf(itemType))) {
             // Equip as helmet.
             this.equippedHelmet = item;
-        } else if ("Chestplate".equalsIgnoreCase(itemType)) {
+        } else if ("Chestplate".equalsIgnoreCase(String.valueOf(itemType))) {
             // Equip as chestplate.
             this.equippedChestplate = item;
-        } else if ("Leggings".equalsIgnoreCase(itemType)) {
+        } else if ("Leggings".equalsIgnoreCase(String.valueOf(itemType))) {
             // Equip as leggings.
             this.equippedLeggings = item;
-        } else if ("Boots".equalsIgnoreCase(itemType)) {
+        } else if ("Boots".equalsIgnoreCase(String.valueOf(itemType))) {
             // Equip as boots.
             this.equippedBoots = item;
         } else {

@@ -1,5 +1,7 @@
 package org.example.tabletop.models;
 
+import org.example.tabletop.enums.ItemType;
+
 public class Weapon extends Item{
 
     double physicalDamageBuff;
@@ -7,7 +9,7 @@ public class Weapon extends Item{
     double physicalDefenseBuff;
     double magicalDefenseBuff;
 
-    public Weapon(String rarity, String name, String description, String type, Double value, double physicalDamageBuff, double magicalDamageBuff, double physicalDefenseBuff, double magicalDefenseBuff) {
+    public Weapon(String rarity, String name, String description, ItemType type, Double value, double physicalDamageBuff, double magicalDamageBuff, double physicalDefenseBuff, double magicalDefenseBuff) {
         super(rarity, name, description, type, value);
         this.physicalDamageBuff = physicalDamageBuff;
         this.magicalDamageBuff = magicalDamageBuff;

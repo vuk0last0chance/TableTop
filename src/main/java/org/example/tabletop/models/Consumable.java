@@ -1,11 +1,13 @@
 package org.example.tabletop.models;
 
+import org.example.tabletop.enums.ItemType;
+
 public class Consumable extends Item{
     private String effect;
     private double effectVariable;
     private double maxStack;
 
-    public Consumable(String rarity,String name, String description, String type, Double value, String effect, double effectVariable, double maxStack) {
+    public Consumable(String rarity, String name, String description, ItemType type, Double value, String effect, double effectVariable, double maxStack) {
         super(rarity, name, description, type, value);
         this.effect = effect;
         this.effectVariable = effectVariable;

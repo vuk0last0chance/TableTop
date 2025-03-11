@@ -1,13 +1,15 @@
 package org.example.tabletop.models;
 
+import org.example.tabletop.enums.ItemType;
+
 public class Item {
     String name;
     String description;
-    String type;
+    private ItemType type;
     Double value;
     String rarity;
 
-    public Item(String rarity,String name, String description, String type, Double value) {
+    public Item(String rarity,String name, String description, ItemType type, Double value) {
         this.name = name;
         this.description = description;
         this.type = type;
@@ -31,11 +33,11 @@ public class Item {
         this.description = description;
     }
 
-    public String getType() {
+    public ItemType getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(ItemType type) {
         this.type = type;
     }
 
