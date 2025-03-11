@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.tabletop.controllers.InstanceEditorProfiVerzijaController">
+   <top>
+      <Label text="Instance Editor" BorderPane.alignment="CENTER_LEFT">
+         <BorderPane.margin>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </BorderPane.margin>
+         <font>
+            <Font name="Times New Roman" size="22.0" />
+         </font>
+      </Label>
+   </top>
+   <right>
+      <TabPane fx:id="managmentTabPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab fx:id="characterTabPaneTab" text="Characters">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="234.0" prefWidth="200.0">
+                     <children>
+                        <ListView prefHeight="200.0" prefWidth="200.0" />
+                        <Button fx:id="charactersPlusButton" layoutY="200.0" mnemonicParsing="false" onAction="#charactersPlusButtonClicked" text="+" />
+                        <Button fx:id="charactersMinusButton" layoutX="25.0" layoutY="200.0" mnemonicParsing="false" onAction="#charactersMinusButtonClicked" text="-" />
+                        <Button fx:id="charactersEditButton" layoutX="46.0" layoutY="200.0" mnemonicParsing="false" onAction="#charactersEditButtonClicked" text="Edit" />
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+          <Tab fx:id="itemsTabPaneTab" text="Items">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView prefHeight="200.0" prefWidth="200.0" />
+                        <Button fx:id="plusItemsButton" layoutY="200.0" mnemonicParsing="false" onAction="#plusItemsButtonClicked" text="+" />
+                        <Button fx:id="itemsMinusButton" layoutX="25.0" layoutY="200.0" mnemonicParsing="false" onAction="#itemsMinusButtonClicked" text="-" />
+                        <Button fx:id="itemsEditButton" layoutX="46.0" layoutY="200.0" mnemonicParsing="false" onAction="#itemsEditButtonClicked" text="Edit" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="notesTabPaneTab" text="Notes">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView prefHeight="200.0" prefWidth="200.0" />
+                        <Button fx:id="plusNotesButton" layoutY="200.0" mnemonicParsing="false" onAction="#plusNotesButtonClicked" text="+" />
+                        <Button fx:id="minusNotesButton" layoutX="25.0" layoutY="200.0" mnemonicParsing="false" onAction="#minusNotesButtonClicked" text="-" />
+                        <Button fx:id="editNotesButton" layoutX="46.0" layoutY="200.0" mnemonicParsing="false" onAction="#editNotesButtonClicked" text="Edit" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </right>
+   <left>
+      <VBox prefHeight="382.0" prefWidth="156.0" spacing="5.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </BorderPane.margin>
+         <children>
+            <MenuButton fx:id="selectGameMasterMenu" mnemonicParsing="false" onAction="#selectGameMasterMenuClicked" prefHeight="26.0" prefWidth="160.0" text="Select GameMaster">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Example1" />
+                <MenuItem mnemonicParsing="false" text="Example2" />
+              </items>
+            </MenuButton>
+            <MenuButton fx:id="selectRulesetMenu" mnemonicParsing="false" onAction="#selectRulesetMenuClicked" prefHeight="26.0" prefWidth="160.0" text="Select Ruleset">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Example1" />
+                  <MenuItem mnemonicParsing="false" text="Example2" />
+               </items>
+            </MenuButton>
+            <Button fx:id="forceCustomRulesButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#forceCustomRulesButtonClicked" prefHeight="26.0" prefWidth="162.0" text="Force Custom Rules" />
+         </children>
+      </VBox>
+   </left>
+   <bottom>
+      <HBox alignment="BOTTOM_CENTER" prefHeight="83.0" prefWidth="600.0" spacing="450.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="cancelInstanceButton" mnemonicParsing="false" onAction="#cancelInstanceButtonClicked" text="Cancel" />
+            <Button fx:id="confirmInstanceButton" mnemonicParsing="false" onAction="#confirmInstanceButtonClicked" text="Confirm" />
+         </children>
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+      </HBox>
+   </bottom>
+</BorderPane>

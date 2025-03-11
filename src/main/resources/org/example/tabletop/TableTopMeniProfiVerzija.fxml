@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="524.0" prefWidth="802.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.tabletop.controllers.TableTopMeniProfiVerzijaController">
+   <top>
+      <VBox alignment="CENTER_LEFT" fillWidth="false" prefHeight="70.0" prefWidth="870.0" BorderPane.alignment="TOP_LEFT">
+         <children>
+            <Label prefHeight="7.0" prefWidth="154.0" text="TableTop">
+               <font>
+                  <Font name="Times New Roman Bold" size="37.0" />
+               </font>
+            </Label>
+            <Label prefHeight="27.0" prefWidth="151.0" text="RPG Manager">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="46.0" right="10.0" top="25.0" />
+         </BorderPane.margin>
+      </VBox>
+   </top>
+   <right>
+      <TabPane prefHeight="415.0" prefWidth="223.0" tabClosingPolicy="UNAVAILABLE" tabMinWidth="55.0" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab fx:id="isntancesTabPane" text="Instances">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView prefHeight="342.0" prefWidth="238.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="charactersTabPane" text="Characters">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView prefHeight="342.0" prefWidth="224.0" />
+                        <Button fx:id="plusButtonCharacter" layoutY="342.0" mnemonicParsing="false" onAction="#plusButtonCharacterClicked" text="+" />
+                        <Button fx:id="minusButtonCharacter" layoutX="25.0" layoutY="342.0" mnemonicParsing="false" onAction="#minusButtonCharacterClicked" text="-" />
+                        <Button fx:id="editButtonCharacter" layoutX="46.0" layoutY="342.0" mnemonicParsing="false" onAction="#editButtonCharacterClicked" text="Edit" />
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+            <Tab fx:id="itemsTabPane" text="Items">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView prefHeight="342.0" prefWidth="224.0" />
+                        <Button fx:id="itemsPlusButton" layoutY="342.0" mnemonicParsing="false" onAction="#itemsPlusButtonClicked" text="+" />
+                        <Button fx:id="minusItemsButton" layoutX="25.0" layoutY="342.0" mnemonicParsing="false" onAction="#minusItemsButtonClicked" text="-" />
+                        <Button fx:id="editItemsButton" layoutX="46.0" layoutY="342.0" mnemonicParsing="false" onAction="#editItemsButtonClicked" text="Edit" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </BorderPane.margin>
+      </TabPane>
+   </right>
+   <center>
+      <HBox prefHeight="375.0" prefWidth="478.0" spacing="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="483.0" prefWidth="156.0" spacing="5.0">
+               <children>
+                  <Button fx:id="createInstanceButton" mnemonicParsing="false" onAction="#createInstanceButtonClicked" prefHeight="26.0" prefWidth="150.0" text="Create Instance" />
+                  <Button fx:id="loadInstanceButton" mnemonicParsing="false" onAction="#loadInstanceButtonClicked" prefHeight="26.0" prefWidth="150.0" text="Load Instance">
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="editInstanceButton" mnemonicParsing="false" onAction="#editInstanceButtonClicked" prefHeight="26.0" prefWidth="150.0" text="Edit Instance" />
+                  <Button fx:id="importInstanceButton" mnemonicParsing="false" onAction="#importInstanceButtonClicked" prefHeight="26.0" prefWidth="150.0" text="Import Instance">
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="exportInstanceButton" mnemonicParsing="false" onAction="#exportInstanceButtonClicked" prefHeight="26.0" prefWidth="150.0" text="Export Instance" />
+                  <Button fx:id="deleteInstanceButton" mnemonicParsing="false" onAction="#deleteInstanceButtonClicked" prefHeight="26.0" prefWidth="150.0" text="Delete Instance" />
+                  <Button fx:id="quitInstanceButton" mnemonicParsing="false" onAction="#quitInstanceButtonClicked" prefHeight="26.0" prefWidth="150.0" text="Quit">
+                     <VBox.margin>
+                        <Insets top="50.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+         <BorderPane.margin>
+            <Insets left="40.0" top="40.0" />
+         </BorderPane.margin>
+      </HBox>
+   </center>
+</BorderPane>
